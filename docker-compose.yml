@@ -1,0 +1,48 @@
+services:
+  backend:
+    build:
+      context: ./mini-bank-back
+      dockerfile: Dockerfile
+    container_name: mini-bank-back
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASS=1312
+      - DB_NAME=mini_bank
+    ports:
+      - "3001:3000" # host:container (backend listens on 3000 in the image)
+    restart: unless-stopped
+    depends_on:
+      - postgres
+
+  frontend:
+    build:
+      context: ./mini-bank-front
+      dockerfile: Dockerfile
+    container_name: mini-bank-front
+    ports:
+      - "3000:80" # host:container (nginx serves on 80)
+    restart: unless-stopped
+    depends_on:
+      - backend
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: mini-bank-postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1312
+      - POSTGRES_DB=mini_bank
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge
+
+volumes:
+  pgdata:
+    driver: local

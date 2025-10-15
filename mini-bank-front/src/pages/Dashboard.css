@@ -1,0 +1,31 @@
+.db-root {
+  max-width: 980px;
+  margin: 32px auto;
+  padding: 16px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #0f172a;
+}
+.db-header { margin-bottom: 18px }
+.db-sub { color: #475569; margin-top: 4px }
+.balances { display: flex; gap: 12px; margin-bottom: 20px }
+.card { background: #fff; border: 1px solid #e6edf3; padding: 12px; border-radius: 8px }
+.card.small { flex: 1; text-align: left }
+.label { font-size: 13px; color: #64748b }
+.amount { font-weight: 700; font-size: 20px; margin-top: 6px }
+.middle { display: flex; gap: 16px }
+.panel { flex: 1; background: #fff; border: 1px solid #e6edf3; border-radius: 8px; padding: 12px }
+.tx-list { list-style: none; padding: 0; margin: 0 }
+.tx { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #eef2f6 }
+.tx:last-child { border-bottom: none }
+.tx-desc { font-weight: 600 }
+.tx-date { font-size: 12px; color: #94a3b8 }
+.tx-amt.pos { color: #059669 }
+.tx-amt.neg { color: #ef4444 }
+.form { display: flex; flex-direction: column; gap: 8px }
+.form.inline { flex-direction: row; align-items: end }
+.form label { display: flex; flex-direction: column; font-size: 13px }
+.form input, .form select { padding: 8px; border: 1px solid #e6edf3; border-radius: 6px }
+.actions { margin-top: 6px }
+.actions button { background: #0ea5a4; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer }
+.actions button:hover { opacity: 0.95 }
+.exchange { margin-top: 16px }

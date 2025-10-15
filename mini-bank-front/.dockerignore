@@ -1,0 +1,12 @@
+node_modules
+dist
+.env
+.vscode
+.git
+.gitignore
+npm-debug.log
+Dockerfile
+
+# ignore the whole docker/ folder but allow the nginx.conf file inside it
+docker/
+!docker/nginx.conf
