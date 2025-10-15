@@ -35,7 +35,7 @@ export class AccountsController {
       const balance = await this.accountsService.getBalance(id, user.id);
       return { id, balance };
     } catch (error) {
-      console.error('Error finding item:', error);
+      console.error('Error retrieving account balance:', error);
       if (error instanceof NotFoundException) {
         throw error;
       }

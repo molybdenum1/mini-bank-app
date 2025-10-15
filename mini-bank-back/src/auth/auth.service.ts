@@ -40,7 +40,7 @@ export class AuthService {
 
   async register(email: string, name: string, password: string) {
     const user = await this.usersService.createUser(email, name, password);
-    // remove password before returning tok en
+    // remove password before returning token
 
     const userResp = toUserResponse(user);
     return this.login(userResp);

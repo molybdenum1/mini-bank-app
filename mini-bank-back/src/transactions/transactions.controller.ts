@@ -36,7 +36,7 @@ export class TransactionsController {
       dto.fromAccountId,
       dto.toAccountId,
       dto.amount,
-      +dto.rate,
+      Number(dto.rate),
     );
     return { id: tx.transaction.id };
   }
